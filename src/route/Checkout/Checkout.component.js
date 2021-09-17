@@ -13,9 +13,9 @@ class Checkout extends SourceCheckout {
         let loadingParts = []
         loadingParts.push(<LoadingBar isFirst={true} isDone={true} />)
         for (let i = 0; i < keys.length - 1; i++) {
-            console.log(i, index)
+            console.log("iteration", i, "index", index)
             loadingParts.push(
-                <LoadingBar stepMap={this.stepMap} step={keys[i]} isDone={index > i} />
+                <LoadingBar stepMap={this.stepMap} step={keys[i]} isDone={index > i} isNext={index === i} />
             )
         }
         return loadingParts;

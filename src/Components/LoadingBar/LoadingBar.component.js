@@ -27,7 +27,7 @@ export default class LoadingBar extends Component {
         return (
             <div className="bar-and-circle">
                 {!this.props.isFirst && <div className="circle-and-text">
-                    <div className="circle">
+                    <div className={this.props.isNext || this.props.isDone ? "circle" : "circle--dark"}>
                         {this.props.isDone ? <AiOutlineCheck className="icon" /> : this.getIndex()}
                     </div>
                     <div className="text">

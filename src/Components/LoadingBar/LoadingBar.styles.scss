@@ -15,6 +15,11 @@
         0% {transform: rotate(0deg);}
         50% {transform: rotate(35deg);}
         100% {transform: rotate(0deg);}
+    }
+
+    @keyframes circle-coloring {
+        from {background-color: $default-secondary-dark-color; color: $black;}
+        to {background-color: var(--primary-dark-color); color: $white;}
         
     }
 
@@ -52,16 +57,28 @@
         align-items: center;
     }
     
-    .circle{
+    @mixin circle{
         width: 25px;
         height: 25px;
         border-radius: 50%;
-        background-color: var(--primary-dark-color);
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        background-color: $default-secondary-dark-color;
+        color: $black;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
+
+    }
+
+    .circle{
+        @include circle;
+        animation-name: circle-coloring;
+        animation-delay: 1s;
+        animation-duration: 200ms;
+        animation-fill-mode: forwards;
+    }
+    .circle--dark{
+        @include circle;
     }
     
     .text{
@@ -75,7 +92,7 @@
         background-color: var(--primary-dark-color);
         width: 100%;
         animation-name: animation;
-        animation-duration: 4s;
+        animation-duration: 1s;
     }
 
 }
