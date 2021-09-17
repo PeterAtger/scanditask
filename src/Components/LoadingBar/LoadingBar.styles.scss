@@ -1,0 +1,82 @@
+.Loading-Bar-Container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    background-color: var(--breadcrumbs-background);
+
+    @keyframes animation {
+        from {width: 0%;}
+        to {width: 100%;}
+      }
+
+    @keyframes icon-animation {
+        0% {transform: rotate(0deg);}
+        50% {transform: rotate(35deg);}
+        100% {transform: rotate(0deg);}
+        
+    }
+
+    .icon{
+        animation-name: icon-animation;
+        animation-duration: 1s;
+    }
+
+    .Loading-Bar{
+        // position: sticky;
+        margin-left: 4px;
+        margin-right: 4px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 5px;
+        border-radius: 32px;
+        background-color:  $default-secondary-dark-color;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    
+    }
+    
+    .bar-and-circle{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .circle-and-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .circle{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: var(--primary-dark-color);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    
+    .text{
+        margin-top: 4px;
+        width: fit-content;
+        text-align: center;
+    }
+    
+    
+    .Loading-Bar-Coloring{
+        background-color: var(--primary-dark-color);
+        width: 100%;
+        animation-name: animation;
+        animation-duration: 4s;
+    }
+
+}
+
